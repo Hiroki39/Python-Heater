@@ -1,4 +1,5 @@
 import multiprocessing
+import os
 
 
 def thread_func():
@@ -7,7 +8,7 @@ def thread_func():
 
 
 if __name__ == "__main__":
-    cpus = 7
+    cpus = os.cpu_count()
     t = []
     for i in range(0, cpus):
         thread = multiprocessing.Process(target=thread_func)
